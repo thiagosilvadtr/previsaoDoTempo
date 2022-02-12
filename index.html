@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Previsão do tempo</title>
+    <script src="./JS/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!--loading-->
+    <div id="loader">
+        <!---->
+        <div class="lds-hourglass"></div>
+    </div>
+    <!--loading-->
+    <!--page header-->
+    <header>
+        <!--page navigation-->
+        <nav id="nav">
+            <!--mobile menu button-->
+            <button id="btn-mobile">
+                <span id="hanburg"></span>
+            </button>
+            <!--mobile menu button-->
+            <ul class="active" id="header">
+                <!--menu-->
+                <li><a class="link" href="#home">Tempo agora</a></li>
+                <li><a class="link" href="#sectionCards">Previsão Semanal</a></li>
+                <li><a class="link" href="#section-charts">Indice por hora</a></li>
+                <li><a class="link" href="#alertBlock">Alertas</a></li>
+            </ul>
+            <!--menu-->
+        </nav>
+        <!--page navigation-->
+    </header>
+    <!--page header-->
+    <div>
+        <!--main content-->
+        <main>
+            <!--current day forecast information-->
+            <div id="search">
+                <!--user input field-->
+                <input type="text" id="textSearch" placeholder="&nbsp;&nbsp; Pesquise por uma cidade " />
+                <!--user input field-->
+                <!--search button-->
+                <button id="submit">
+                    <!--magnifying glass image-->
+                    <img id="icon" src="./img/lupa.png" alt="buscar">
+                </button>
+                <!--search button-->
+            </div>
+            <div class="container" id="home">
+                <!--main information-->
+                <div class="contInfo">
+                    <div id="forecastDay">
+                        <!--maximum and minimum forecast of the day-->
+                        <span>Max</span><span id="max"></span><br>
+                        <span>Min</span><span id="min"></span>
+                        <!--maximum and minimum forecast of the day-->
+                    </div>
+                    <div id="tempatual">
+                        <!--current weather information-->
+                        <span class="inforTemp" id="local"></span>
+                        <div id="temp">
+                            <img id="icone" src="" />
+                            <span></span>
+                        </div>
+                        <span class="inforTemp" id="tempag"></span>
+                        <!--current weather information-->
+                    </div>
+                    <div id="hour">
+                        <!--real time schedule-->
+                        <span id="date"></span><br>
+                        <span id="clock"></span>
+                        <!--real time schedule-->
+                    </div>
+                </div>
+                <!--main information-->
+            </div>
+            <div class="infoAdd">
+
+                <!--additional information-->
+                <div class="infoData">
+                    <div class="tagp">
+                        <span>Velocidade do vento</span>
+                        <span id="infoSpeed"></span>
+                    </div>
+                    <div class="tagp">
+                        <span>Sensação termica</span>
+                        <span id="infoTerm"></span>
+                    </div>
+                    <div class="tagp">
+                        <span>Pressão atmosférica&nbsp;&nbsp;&nbsp;</span>
+                        <span id="infoPressao"></span>
+                    </div>
+                </div>
+                <div class="infoData">
+                    <div class="tagp">
+                        <span>Visibilidade&nbsp;&nbsp;&nbsp;</span>
+                        <div id="infoVisi"></div>
+                    </div>
+                    <div class="tagp">
+                        <span>Indice UV</span>
+                        <span id="infoUV"></span>
+                    </div>
+                    <div class="tagp">
+                        <span>Umidade</span>
+                        <span id="infoHumi"></span>
+                    </div>
+                </div>
+                <!--additional information-->
+            </div>
+            <hr>
+            <!--current day forecast information-->
+        </main>
+        <!--main content-->
+        <!--weekly forecast section-->
+        <section id="sectionCards">
+            <div id="titleCards">
+                <h1>Previsão dos proximos dias</h1>
+            </div>
+            <!--weekly forecast-->
+            <div id="cards">
+            </div>
+        </section>
+        weekly forecast section
+        <!--hourly chart-->
+        <section id="section-charts">
+            <div id="charts"></div>
+        </section>
+        <!--hourly chart-->
+        <!--regional alert section-->
+        <section id="alertBlock">
+            <h1 id="titleAlert">Alertas regionais</h1>
+            <div id="alert">
+                <!--alert information-->
+                <div id="alertInfo">
+                    <div class="textAlert">fonte:
+                        <span id="informationSource"></span>
+                    </div>
+                    <div class="textAlert">evento:
+                        <span id="event"></span>
+                    </div>
+                    <div class="textAlert">inicio:
+                        <span id="start"></span>
+                    </div>
+                    <div class="textAlert">descrição:
+                        <span id="description"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--regional alert section-->
+        <div id="hrFooter">
+            <hr>
+        </div>
+        <!--footer-->
+        <footer>
+            <div id="footer">
+                <div>
+                    <span>Fonte de dados</span>&nbsp;&nbsp;<a class="footerLink"
+                        href="https://openweathermap.org/api">OpenWeather</a>
+                </div>
+                <div>
+                    <span>Icone fornecido por</span>&nbsp;&nbsp;
+                    <a class="footerLink" href="https://www.flaticon.com/br/icones-gratis/lupa" title="lupa ícones">Lupa
+                        ícones criados por
+                        Ayub
+                        Irawan - Flaticon</a>
+                </div>
+                <div>
+                    <span>Desenvolvido por</span>&nbsp;&nbsp;<span>Thiago Dutra</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="./JS/script.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</body>
+
+</html>
